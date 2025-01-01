@@ -1,10 +1,15 @@
-import React from "react"
+'use client'
+import React, { useEffect, useState } from "react"
+import Image from "next/image"
+import { Chips } from "./_components"
 import heroImage from '@/public/media/hero-image.jpg'
 import indicator1 from '@/public/media/indicator1.png'
 import indicator2 from '@/public/media/indicator2.png'
 import indicator3 from '@/public/media/indicator3.png'
-import Image from "next/image"
-import { Chips } from "./_components"
+import dataStocks from '@/public/media/data-stocks.jpg'
+import dataCrypto from '@/public/media/data-crypto.jpg'
+import dataCurrency from '@/public/media/data-currency.jpg'
+import dataCommodities from '@/public/media/data-comodities.jpg'
 
 const performanceData = [
   { id: 1, name: 'Stocks' },
@@ -14,6 +19,27 @@ const performanceData = [
 ]
 
 export default function Home() {
+
+  const [selectedData, setSelectedData] = useState<string>('Stocks')
+  const [selectedDataImage, setSelectedDataImage] = useState(dataStocks)
+
+  useEffect(() => {
+    switch (selectedData) {
+      case 'Stocks':
+        setSelectedDataImage(dataStocks)
+        break
+      case 'Crypto':
+        setSelectedDataImage(dataCrypto)
+        break
+      case 'Forex':
+        setSelectedDataImage(dataCurrency)
+        break
+      case 'Commodities':
+        setSelectedDataImage(dataCommodities)
+        break
+    }
+  }, [selectedData])
+
   return (
     <div className="">
       <section className="py-9 px-44">
@@ -70,8 +96,24 @@ export default function Home() {
       <section className="py-9 px-44">
         <p className="font-[700] text-[22px] leading-7 mb-4">Performance Data</p>
 
-        <div className="flex items-center gap-x-3">
-          {performanceData.map(data => <Chips key={data.id} title={data.name} />)}
+        <div className="flex items-center gap-x-3 mb-10">
+          {performanceData.map(data =>
+            <Chips
+              key={data.id}
+              title={data.name}
+              isActive={selectedData === data.name}
+              onClick={() => setSelectedData(data.name)}
+            />)}
+        </div>
+
+        <div className="relative w-full h-[314px] rounded-xl overflow-hidden">
+          <Image
+            priority
+            src={selectedDataImage}
+            alt="hero"
+            layout="fill"
+            objectFit="cover"
+          />
         </div>
       </section>
     </div>
