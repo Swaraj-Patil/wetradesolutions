@@ -3,7 +3,7 @@ import Button from './Button'
 
 const Header = () => {
     return (
-        <header className='bg-primary text-white flex py-5 px-20 items-center justify-between'>
+        <header className='text-white flex py-5 px-20 items-center justify-between border-b border-white'>
             <div>
                 WeTradeSolutions LOGO
             </div>
