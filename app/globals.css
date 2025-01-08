@@ -25,3 +25,9 @@ body {
   justify-content: center;
   align-items: center;
 }
+
+.content__between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
