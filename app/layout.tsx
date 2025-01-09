@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Header } from "./_components";
+import { Footer, Header } from "./_components";
 
 export const metadata: Metadata = {
   title: "WeTradeSolutions",
@@ -17,6 +17,7 @@ export default function RootLayout({
       <body className="bg-primary text-white">
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );

@@ -164,7 +164,7 @@ export default function Home() {
 
         <div className="flex items-center gap-x-3 mb-10">
           {pricing.map(eachPrice =>
-            <div className="w-[300px] h-[250px] rounded-xl border border-[#3D4A52] bg-[#1C2126] p-[24px]">
+            <div key={eachPrice.id} className="w-[300px] h-[250px] rounded-xl border border-[#3D4A52] bg-[#1C2126] p-[24px]">
               <div className="content__between mb-2">
                 <p className="font-[700] text-base">{eachPrice.title}</p>
                 {eachPrice.tags?.length && <div className="h-6 rounded-xl bg-[#1C8CD6] text-xs font-[500] px-3 py-1">{eachPrice.tags[0]}</div>}
@@ -172,7 +172,7 @@ export default function Home() {
 
               <p className="text-4xl font-[900] mb-4">{`$${eachPrice.cost.toLocaleString()}`}<span className="font-[700] text-base ml-1">{`/${eachPrice.title.toLowerCase().slice(0, -2)}`}</span></p>
 
-              <div className="mb-3 text-[13px] font-[400]">{eachPrice.benefits?.map(benefit => <p className="flex items-center gap-x-3 mb-2"><FaCheck fontSize={18} />{benefit}</p>)}</div>
+              <div className="mb-3 text-[13px] font-[400]">{eachPrice.benefits?.map((benefit, i) => <p key={i} className="flex items-center gap-x-3 mb-2"><FaCheck fontSize={18} />{benefit}</p>)}</div>
             </div>
           )}
         </div>

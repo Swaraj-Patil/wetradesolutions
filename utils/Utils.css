@@ -1,0 +1,17 @@
+.subscription-input {
+  display: flex;
+  flex-direction: column;
+  min-width: 350px;
+}
+
+.subscription-input > label {
+  color: #fffde6;
+  font-size: 14px;
+}
+
+.subscription-input > input {
+  background-color: transparent;
+  border-bottom: 2px solid white;
+  border-radius: 6px;
+  outline: none;
+}
