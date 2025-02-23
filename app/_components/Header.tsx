@@ -19,7 +19,7 @@ const Header = () => {
         <header
             className={`
                 text-white flex py-5 px-20 items-center justify-between sticky top-0 z-50 transition-all duration-300 ease-in-out shadow-sm
-                ${isScrolled && '!text-[#091017] bg-white py-[14px]'}
+                ${isScrolled && 'backdrop-blur-2xl py-[14px]'}
             `}
         >
             <div>

@@ -30,9 +30,9 @@ const PriceCard: FC<PriceCardProps> = ({ features, title, monthly, yearly, savin
             }}>
                 <p className='text-2xl font-normal' style={{ fontSize: '1.5rem' }}>{title}</p>
 
-                {main && <div className='absolute' style={{ marginTop: '8px' }}><InfoLabel label='Popular' fontSize={16} /></div>}
+                {main && <div className='absolute' style={{ marginTop: '8px', position: 'absolute' }}><InfoLabel label='Popular' fontSize={16} /></div>}
 
-                <div className='mt-16'>
+                <div style={{ marginTop: '64px' }}>
                     <span className='text-2xl'>$</span>
                     <span className='text-6xl'>{monthly.toLocaleString()}</span>
                     <span className='text-lg'>/mo</span>
