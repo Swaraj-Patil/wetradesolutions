@@ -10,13 +10,39 @@ import dataStocks from '@/public/media/data-stocks.jpg'
 import dataCrypto from '@/public/media/data-crypto.jpg'
 import dataCurrency from '@/public/media/data-currency.jpg'
 import dataCommodities from '@/public/media/data-comodities.jpg'
-import { FaCheck } from "react-icons/fa6";
+import ToggleButton from "./_components/ToggleButton"
+import PriceCard from "@/utils/PriceCard"
+import { InfoLabel } from "@/utils/Utils"
 
 const performanceData = [
   { id: 1, name: 'Stocks' },
   { id: 2, name: 'Crypto' },
   { id: 3, name: 'Forex' },
   { id: 4, name: 'Commodities' },
+]
+
+const essentialFeatures = [
+  'Price Action Concepts toolkit + screener',
+  'Community access w/ price action alerts',
+  'Custom Alert Creator for PAC toolkit',
+  'Alert Scripting for Price Action Concepts',
+  '24/7 support & active toolkit updates'
+]
+
+const premiumFeatures = [
+  'Signals & Overlays toolkit + screener',
+  'Oscillator Matrix toolkit + screener',
+  'Full scanner alerts & user strategies',
+  'Custom Alert Creator for all 3 toolkits',
+  'Alert Scripting functionality for all 3 toolkits'
+]
+
+const ultimateFeatures = [
+  'AI Backtesting Assistant platform access',
+  'Full suite w/ 3 Backtesters on TradingView',
+  'Deep optimization engine for signal settings',
+  'Scanners, bots, & backtests shared weekly',
+  'Priority 24/7 support & active product updates'
 ]
 
 const pricing = [
@@ -61,6 +87,11 @@ export default function Home() {
   const [selectedData, setSelectedData] = useState<string>('Stocks')
   const [selectedDataImage, setSelectedDataImage] = useState(dataStocks)
   const [isMounted, setIsMounted] = useState<boolean>(false)
+  const [selectedPrice, setSelectedPrice] = useState<'Monthly' | 'Yearly'>('Yearly')
+
+  const handlePriceChange = (newValue: string) => {
+    setSelectedPrice(newValue as 'Monthly' | 'Yearly')
+  }
 
   useEffect(() => {
     setIsMounted(true)
@@ -159,7 +190,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-9 px-44">
+      {/* <section className="py-9 px-44">
         <p className="font-[700] text-[22px] leading-7 mb-4">Pricing</p>
 
         <div className="flex items-center gap-x-3 mb-10">
@@ -177,6 +208,60 @@ export default function Home() {
               </div>
             </div>
           )}
+        </div>
+      </section> */}
+
+      <section className="mb-10">
+        <h1 className="text-6xl text-center">Plans for every style of trading</h1>
+        <div className="text-center mt-14 mb-6">
+          <InfoLabel label='Pay yearly and get up to 50% off!' />
+        </div>
+
+
+        <div className="content__center flex-col">
+          <div className="relative mb-16">
+            <ToggleButton value={selectedPrice} onChange={handlePriceChange} />
+            <div className="absolute top-0 -right-12">
+              <svg width="28" height="26" viewBox="0 0 28 26" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-cyan-500">
+                <path d="M2.9024 21.8531C11.5 20 22.5 13.5 26.9999 1.56055" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path>
+                <path d="M7.34144 14.8779C7.34144 14.8779 4.80486 19.9511 1 22.4877C3.5 22.4877 11.5 23 13.6829 24.3901" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+
+          </div>
+          <div className="flex gap-x-8 w-full px-44">
+            <PriceCard
+              title='Essentials'
+              subtitle='Start out strong & automate price action, the most essential part of your charts.'
+              features={essentialFeatures}
+              featureTitle='All Essential features'
+              monthly={selectedPrice === 'Monthly' ? 39.99 : 24.99}
+              yearly={selectedPrice === 'Yearly' ? 299.89 : undefined}
+              savings={35}
+              bgImage="https://www.luxalgo.com/images/graphics/top_right_cyan_square.svg"
+            />
+            <PriceCard
+              title='Premium'
+              subtitle="The most powerful set of tools & signals ever created for technical traders."
+              features={premiumFeatures}
+              featureTitle='All features from Essential, plus'
+              monthly={selectedPrice === 'Monthly' ? 67.99 : 39.99}
+              yearly={selectedPrice === 'Yearly' ? 479.88 : undefined}
+              savings={40}
+              bgImage="https://www.luxalgo.com/images/graphics/top_right_cobalt_diamond.svg"
+            />
+            <PriceCard
+              main
+              title='Ultimate'
+              subtitle="For data-driven traders who want professional backtesting with AI."
+              features={ultimateFeatures}
+              featureTitle='All features from Premium, plus'
+              monthly={selectedPrice === 'Monthly' ? 119.99 : 59.99}
+              yearly={selectedPrice === 'Yearly' ? 719.88 : undefined}
+              savings={50}
+              bgImage="https://www.luxalgo.com/images/graphics/top_right_purple_stars.svg"
+            />
+          </div>
         </div>
       </section>
     </div>

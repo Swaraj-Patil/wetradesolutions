@@ -4,14 +4,22 @@
   min-width: 350px;
 }
 
-.subscription-input > label {
+.subscription-input>label {
   color: #fffde6;
   font-size: 14px;
 }
 
-.subscription-input > input {
+.subscription-input>input {
   background-color: transparent;
   border-bottom: 2px solid white;
   border-radius: 6px;
   outline: none;
+}
+
+.button__parent:hover .button__child {
+  transform: scale(1) !important;
+}
+
+.button__parent:hover {
+  color: white
 }
