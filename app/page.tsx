@@ -45,42 +45,42 @@ const ultimateFeatures = [
   'Priority 24/7 support & active product updates'
 ]
 
-const pricing = [
-  {
-    id: 1,
-    title: 'Monthly',
-    cost: 99,
-    tags: ['Most popular'],
-    benefits: [
-      'Unlimited access to the Universal Indicator',
-      'Real-time sentiment data',
-      'AI-driven predictions',
-      'Simple and intuitive design'
-    ]
-  },
-  {
-    id: 2,
-    title: 'Quarterly',
-    cost: 270,
-    benefits: [
-      'Unlimited access to the Universal Indicator',
-      'Real-time sentiment data',
-      'AI-driven predictions',
-      'Simple and intuitive design'
-    ]
-  },
-  {
-    id: 3,
-    title: 'Yearly',
-    cost: 960,
-    benefits: [
-      'Unlimited access to the Universal Indicator',
-      'Real-time sentiment data',
-      'AI-driven predictions',
-      'Simple and intuitive design'
-    ]
-  },
-]
+// const pricing = [
+//   {
+//     id: 1,
+//     title: 'Monthly',
+//     cost: 99,
+//     tags: ['Most popular'],
+//     benefits: [
+//       'Unlimited access to the Universal Indicator',
+//       'Real-time sentiment data',
+//       'AI-driven predictions',
+//       'Simple and intuitive design'
+//     ]
+//   },
+//   {
+//     id: 2,
+//     title: 'Quarterly',
+//     cost: 270,
+//     benefits: [
+//       'Unlimited access to the Universal Indicator',
+//       'Real-time sentiment data',
+//       'AI-driven predictions',
+//       'Simple and intuitive design'
+//     ]
+//   },
+//   {
+//     id: 3,
+//     title: 'Yearly',
+//     cost: 960,
+//     benefits: [
+//       'Unlimited access to the Universal Indicator',
+//       'Real-time sentiment data',
+//       'AI-driven predictions',
+//       'Simple and intuitive design'
+//     ]
+//   },
+// ]
 
 export default function Home() {
 
