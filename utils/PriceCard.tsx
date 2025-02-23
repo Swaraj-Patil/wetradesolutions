@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
 import { InfoLabel } from './Utils'
-import { FaRegCircleCheck } from 'react-icons/fa6'
+import { FaArrowRight, FaRegCircleCheck } from 'react-icons/fa6'
 
 interface PriceCardProps {
     title: string;
@@ -89,7 +89,7 @@ const PriceCard: FC<PriceCardProps> = ({ features, title, monthly, yearly, savin
                                 transition: 'all 200ms'
                             }}
                         ></span>
-                        <span className="relative z-10">Subscribe</span>
+                        <span className="relative z-10 flex items-center" style={{ gap: '8px' }}>Subscribe <FaArrowRight /></span>
                     </button>
                     <p className='text-xs' style={{ color: '#80899F' }}>30-day money-back guarantee</p>
                 </div>
