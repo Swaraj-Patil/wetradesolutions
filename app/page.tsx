@@ -172,7 +172,9 @@ export default function Home() {
 
               <p className="text-4xl font-[900] mb-4">{`$${eachPrice.cost.toLocaleString()}`}<span className="font-[700] text-base ml-1">{`/${eachPrice.title.toLowerCase().slice(0, -2)}`}</span></p>
 
-              <div className="mb-3 text-[13px] font-[400]">{eachPrice.benefits?.map((benefit, i) => <p key={i} className="flex items-center gap-x-3 mb-2"><FaCheck fontSize={18} />{benefit}</p>)}</div>
+              <div className="mb-3 text-[13px] font-[400]">
+                {eachPrice.benefits?.map((benefit, i) => <p key={i} className="flex items-center gap-x-3 mb-2"><FaCheck fontSize={18} />{benefit}</p>)}
+              </div>
             </div>
           )}
         </div>
